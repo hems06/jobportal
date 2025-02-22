@@ -1,0 +1,179 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-Screen Layout */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #cfd9df, #e2ebf0);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    display: flex;
+    width: 90%;
+    height: 90vh;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Job Section */
+.job-section {
+    width: 35%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.job-button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect for Job Buttons */
+.job-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Chat Section */
+.chat-section {
+    width: 65%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Chat Item */
+.chat-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for Chat Items */
+.chat-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Chat Avatar */
+.chat-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #ff5e62;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+/* Chat Content */
+.chat-content h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.chat-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close Button */
+.popup .close-btn {
+    background: red;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Smooth Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -55%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .job-section {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .chat-section {
+        width: 100%;
+    }
+    
+    .chat-item {
+        max-width: 100%;
+    }
+}

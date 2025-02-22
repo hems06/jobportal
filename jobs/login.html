@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Women Job Portal - Login</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <section class="login-container">
+        <h2>Login</h2>
+        <label for="role">Select Role:</label>
+        
+        <select id="role" class="login loginseek">
+            <option value="job-seeker">Job Seeker</option>
+            <option value="job-poster">Job Poster</option>
+        </select>
+
+        <input type="text" id="username" placeholder="Enter Username" class="input-box">
+        <input type="password" id="password" placeholder="Enter Password" class="input-box">
+        <button onclick="login()">Login</button>
+      
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </section>
+
+    <script>
+        // Move to next field when pressing Enter
+        document.getElementById('username').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent form submission (if inside a form)
+                document.getElementById('password').focus();
+            }
+        });
+
+        document.getElementById('password').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                login(); // Call the login function when pressing Enter in password field
+            }
+        });
+
+        function login() {
+            let role = document.getElementById('role').value;
+            if (role === 'job-seeker') {
+                window.location.href = 'jobseekerdashboard.html';
+            } else {
+                window.location.href = 'job-poster-dashboard.html';
+            }
+        }
+    </script>
+</body>
+</html>

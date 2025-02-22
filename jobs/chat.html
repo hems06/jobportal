@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="msg.css">
+</head>
+<body>
+
+    <div class="chat-container">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <a href="applicant.html" class="back-btn">⬅ Back</a>
+            <span id="chatUserName">Chat</span>
+        </div>
+        
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages"></div>
+    
+        <!-- Chat Input -->
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the user name from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const userName = urlParams.get("user");
+
+            if (userName) {
+                document.getElementById("chatUserName").textContent = userName;
+            }
+
+            function sendMessage() {
+                let input = document.getElementById("messageInput");
+                let message = input.value.trim();
+                
+                if (message !== "") {
+                    let chatBox = document.getElementById("chatMessages");
+                    let newMessage = document.createElement("div");
+                    newMessage.textContent = message;
+                    newMessage.classList.add("user-message");
+                    
+                    chatBox.appendChild(newMessage);
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                    input.value = "";
+                }
+            }
+
+            function handleKeyPress(event) {
+                if (event.key === "Enter") {
+                    sendMessage();
+                }
+            }
+
+            window.sendMessage = sendMessage;
+            window.handleKeyPress = handleKeyPress;
+        });
+    </script>
+
+</body>
+</html>

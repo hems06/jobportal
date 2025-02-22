@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Poster Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li><a href="#" onclick="navigate('post-job')">Post a Job</a></li>
+                <li><a href="#" onclick="navigate('my-jobs')">My Jobs</a></li>
+                <li><a href="#" onclick="navigate('applicants')">Applicants</a></li>
+                <li><a href="#" onclick="navigate('settings')">Settings</a></li>
+            </ul>
+        </aside>
+        
+        <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
+        
+        <main class="content" id="content">
+            <h1>Post a New Job</h1>
+            <form class="job-form">
+                <label for="title">Job Title:</label>
+                <input type="text" id="title" name="title" required>
+                
+                <label for="description">Job Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+                
+                <label for="salary">Salary:</label>
+                <input type="text" id="salary" name="salary" required>
+                
+                <button type="submit">Post Job</button>
+            </form>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
