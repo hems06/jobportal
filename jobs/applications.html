@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Applications</title>
+    <link rel="stylesheet" href="applications.css">
+    <script defer src="applications.js"></script>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="menu-toggle" id="close-menu">&times;</button>
+        </div>
+        <button class="filter-btn" onclick="filterApplications('all')">All</button>
+        <button class="filter-btn" onclick="filterApplications('pending')">Pending</button>
+        <button class="filter-btn" onclick="filterApplications('accepted')">Accepted</button>
+        <button class="filter-btn" onclick="filterApplications('rejected')">Rejected</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <button class="menu-toggle open-menu" id="open-menu">&#9776;</button>
+
+        <div class="content">
+            <h1>Job Applications</h1>
+            <div id="applications-list"></div>
+        </div>
+    </div>
+
+</body>
+</html>

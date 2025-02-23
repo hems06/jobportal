@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Posted Jobs</title>
+    <link rel="stylesheet" href="myjob.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Menu -->
+        <div class="menu">
+            <h2>Menu</h2>
+            <button class="menu-close">&times;</button>
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All Jobs</button>
+                <button class="filter-btn" data-filter="open">Open</button>
+                <button class="filter-btn" data-filter="closed">Closed</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <h1>My Posted Jobs</h1>
+            <div class="job-list">
+                <div class="job-card" data-status="open">
+                    <h3>Software Developer</h3>
+                    <p>Description: Looking for an experienced full-stack developer.</p>
+                    <p>Applicants: <span class="applicants-count">3</span></p>
+                    <p>Status: <span class="status">OPEN</span></p>
+                    <button class="close-job-btn">Close Job</button>
+                </div>
+                
+                <div class="job-card" data-status="open">
+                    <h3>UI/UX Designer</h3>
+                    <p>Description: Need a creative UI/UX designer for our product.</p>
+                    <p>Applicants: <span class="applicants-count">5</span></p>
+                    <p>Status: <span class="status">OPEN</span></p>
+                    <button class="close-job-btn">Close Job</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="myjobs.js"></script>
+</body>
+</html>

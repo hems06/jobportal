@@ -1,0 +1,156 @@
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background: #f5f5f5;
+    overflow-x: hidden;
+}
+
+/* Container */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Sidebar Menu */
+.menu {
+    width: 250px;
+    background: linear-gradient(to right, #ff9a9e,#fad0c4);
+    padding: 20px;
+    color: white;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.menu-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hide menu on small screens */
+@media (max-width: 768px) {
+    .menu {
+        width: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .menu.active {
+        width: 250px;
+        padding: 20px;
+    }
+}
+
+/* Filter Bar */
+.filter-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: white;
+    color: #6a11cb;
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Job Cards */
+.job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.job-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.job-card[data-status="closed"] {
+    opacity: 0.6;
+}
+
+.status {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.close-job-btn {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    background: #F44336;
+    color: white;
+    transition: 0.3s;
+}
+
+.close-job-btn:hover {
+    background: #d32f2f;
+}
+
+.close-job-btn:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+
+    .job-card {
+        padding: 10px;
+    }
+
+    .job-list {
+        gap: 10px;
+    }
+}

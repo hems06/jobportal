@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Women Job Portal - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <section class="login-container">
+        <h2>Login</h2>
+        <label for="role">Select Role:</label>
+             <select id="role" class="login">
+                <option value="job-seeker">Job Seeker</option>
+                <option value="job-poster">Job Poster</option>
+            </select>
+
+               
+        <input type="text" id="username" placeholder="Enter Username" class="input-box">
+        <input type="password" id="password" placeholder="Enter Password" class="input-box">
+        <button onclick="login()">Login</button>
+      
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+
+    </section>
+</body>
+</html>
+
+
+<script>
+    function login() {
+        let role = document.getElementById('role').value;
+        if (role === 'job-seeker') {
+            window.location.href = 'job-seeker-dashboard.html';
+        } else {
+            window.location.href = 'job-poster-dashboard.html';
+        }
+    }
+</script>              

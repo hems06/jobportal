@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="postjob.css">
+    <script defer src="postjob.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Post a Job</h1>
+
+        <form id="jobForm">
+            <input type="hidden" id="jobId">
+            <label>Job Title:</label>
+            <input type="text" id="jobTitle" required>
+            
+            <label>Company:</label>
+            <input type="text" id="companyName" required>
+            
+            <label>Location:</label>
+            <input type="text" id="location" required>
+
+            <label>Job Type:</label>
+            <select id="jobType" required>
+                <option value="Full-Time">Full-Time</option>
+                <option value="Part-Time">Part-Time</option>
+                <option value="Freelance">Freelance</option>
+                <option value="Remote">Remote</option>
+            </select>
+
+            <label>Salary (Optional):</label>
+            <input type="text" id="salary">
+            
+
+            <label>Job Description:</label>
+            <textarea id="description" required></textarea>
+
+            <button type="submit">Save Job</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Job Listings</h2>
+        <table id="jobsTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Type</th>
+                    <th>Salary</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</body>
+</html>
